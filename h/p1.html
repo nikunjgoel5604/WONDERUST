@@ -1,0 +1,303 @@
+<html>
+<head>
+<style>
+body {background-image:url("file:///C:/Users/win10/Desktop/h/hh2.jpg");}
+     {background-repeat: no-repeat;}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+::selection{
+  color: #000;
+  background: #Green;
+}
+nav{
+  position: fixed;
+  background: Blue;
+  width: 100%;
+  padding: 0px ;
+  z-index: 12;
+}
+nav .menu{
+  max-width: 1250px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2px;
+}
+.menu .logo a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+}
+.menu ul{
+  display: inline-flex;
+}
+.menu ul li{
+  list-style: none;
+  margin-left: 7px;
+}
+.menu ul li:first-child{
+  margin-left: 0px;
+}
+.menu ul li a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.menu ul li a:hover{
+  background: #Red;
+  color: black;
+}
+.img{
+  background: url('img3.jpg')no-repeat;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.img::before{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+.center{
+  position: absolute;
+  top:  50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 0 20px;
+  text-align: left;
+}
+.center .title{
+  color: #fff;
+  font-size: 55px;
+  font-weight: 600;
+}
+.center .sub_title{
+  color: #fff;
+  font-size: 52px;
+  font-weight: 600;
+}
+.center .btns{
+  margin-top: 20px;
+}
+.center .btns button{
+  height: 55px;
+  width: 170px;
+  border-radius: 5px;
+  border: none;
+  margin: 0 10px;
+  border: 2px solid white;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0 10px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+}
+.center .btns button:first-child{
+  color: #fff;
+  background: none;
+}
+.btns button:first-child:hover{
+  background: pink;
+  color: black;
+}
+.center .btns button:last-child{
+  background: white;
+  color: black;
+}
+
+* {
+margin: 0;
+padding: 0;
+}
+.navbar {
+display: flex;
+align-items: center;
+justify-content: center;
+position: sticky;
+top: 0;
+cursor: pointer;
+}
+.background {
+background: black;
+background-blend-mode: darken;
+background-size: cover;
+}
+.nav-list {
+width: 70%;
+display: flex;
+align-items: center;
+}
+.logo {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.logo img {
+width: 180px;
+border-radius: 50px;
+}
+.nav-list li {
+list-style: none;
+padding: 26px 30px;
+}
+.nav-list li a {
+text-decoration: none;
+color: white;
+}
+.nav-list li a:hover {
+color: grey;
+}
+.rightnav {
+width: 30%;
+text-align: right;
+}
+#search {
+padding: 5px;
+font-size: 17px;
+border: 2px solid grey;
+border-radius: 9px;
+}
+.firstsection {
+background-color: green;
+height: 400px;
+}
+.secondsection {
+background-color: Blue;
+height: 400px;
+}
+.box-main {
+display: flex;
+justify-content: center;
+align-items: center;
+color: Yellow;
+max-width: 80%;
+margin: auto;
+height: 80%;
+}
+.firsthalf {
+width: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+.secondhalf {
+width: 30%;
+}
+.secondhalf img {
+width: 70%;
+border: 4px solid white;
+border-radius: 150px;
+display: block;
+margin: auto;
+}
+.text-big {
+font-family: 'Piazzolla', serif;
+font-weight: bold;
+font-size: 35px;
+}
+.text-small {
+font-size: 18px;
+}
+.btn {
+padding: 3px 2px;
+margin: 4px 0;
+border: 2px solid white;
+border-radius: 8px;
+background: none;
+color: white;
+cursor: pointer;
+}
+btn-sm {
+padding: 6px 10px;
+vertical-align: bottom;
+}
+.section {
+height: 40px;
+display: flex;
+align-items: center;
+justify-content: center;
+max-width: 90%;
+margin: auto;
+}
+.section-Left {
+flex-direction: row-reverse;
+}
+.paras {
+padding: 0px 65px;
+}
+.thumbnail img {
+width: 250px;
+border: 2px solid black;
+border-radius: 26px;
+margin-top: 19px;
+}
+.center {
+text-align: center;
+}
+.text-footer {
+text-align: center;
+padding: 30px 0;
+font-family: 'Ubuntu', sans-serif;
+display: flex;
+justify-content: center;
+color: yellow;
+}
+</style> 
+</head>
+<body>
+<nav>
+<div class="menu">
+<div class="logo">
+<img src="C:\Users\win10\Downloads/code2.jpg">
+<a href="#">Rocket</a>
+</div>
+<ul>
+<li><p><a href="p1.html">Home</a></p></li>
+<li><p><a href="p2.html">About</a></li>
+<li><a href="p3.html">Services</a></li>
+<li><a href="p4.html">Contact</a></li>
+<li><a href="p5.html">Feedback</a></li>
+<li><a href="p6.html">other</a></li>
+</ul>
+</div>
+</nav>
+<div class="img"></div>
+<div class="center">
+<div class="title">Hello </div>
+<div class="sub_title">India</div>
+<div class="thumbnail">
+<img src="C:\Users\win10\Desktop/photo-1555066931-4365d14bab8c.jpg" alt="laptop image">
+</div>
+</div>
+<p style="color:yellow;">I am redgggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg<br>
+fdfhuduhguhguqwertyuiopasdfghjjk;zxcvbnm,./']\125578955qwertyuiioppn<br>
+Paragraphs are the building blocks of papers. Many students define paragraphs in terms of length: a paragraph is a group of at least five sentences, a paragraph is half a page long, etc.,<br> In reality, though, the unity and coherence of ideas among sentences is what constitutes a paragraph.<br> A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116).<br> Length and appearance do not determine whether a section in a paper is a paragraph. For<br> instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long. <br>Ultimately, a paragraph is a sentence or group of sentences that support one main idea. In this handout, we will refer to this as the “controlling idea,” because it controls what happens in the rest of the paragraph.</p>
+
+
+
+</div><footer class="background-image:url("file:///C:/Users/win10/Downloads/emily-bernal-v9vII5gV8Lw-unsplash.jpg");}
+     {background-repeat: no-repeat;}">
+<p class="text-footer">
+Copyright ©-All rights are reserved
+</p>
+</footer>
+
+
+</body>
+</html>

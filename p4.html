@@ -1,0 +1,281 @@
+<html lang="en">
+<head>
+<style>
+body {background-image:url("file:///C:/Users/win10/Desktop/h/hh9.jpeg");}
+     {background-repeat: no-repeat;}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box !important;
+}
+input, label {
+    margin: 5px;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.summaryTbl tr td {
+    padding-left: 10%;
+    padding-right: 10%;
+    font-size: 20px;
+    width: 50%;
+    text-align: justify;
+}
+.summaryTbl tr td:nth-child(1) {
+    padding-left: 15%;
+}
+.summaryTbl tr td:nth-child(2) {
+    text-align: center;
+}
+button {
+    align-self: center;
+    width: 20%;
+    cursor: not-allowed;
+}
+</style>
+</head>
+<title> Hotel Registration From </title>
+<body>
+<script>
+function regClick() {
+    var cName = document.getElementById("cName").value;
+    var date = document.getElementById("date").value;
+    var noOfDays = Number(document.getElementById("noOfdays").value);
+    var noOfPerson = Number(document.getElementById("noOfperson").value);
+    var roomDelux = document.getElementById("delux");
+    var roomSuite = document.getElementById("suite");
+    var aminiLocker = document.getElementById("locker");
+    var aminiAc = document.getElementById("ac");
+    var advance = Number(document.getElementById("advancePaid").value);
+    var balAmount;
+    var selRoomType;
+    var aminities = "";
+    var totalAmount;
+    if (roomDelux.checked) {
+      totalAmount = Number(roomDelux.value);
+      selRoomType = "Delux Room";
+    }
+    if (roomSuite.checked) {
+      totalAmount = Number(roomSuite.value);
+      selRoomType = "Suite Room";
+    }
+    if (aminiLocker.checked) {
+      totalAmount += Number(aminiLocker.value);
+      aminities = "Room Kit[500/Day] , ";
+    }
+    if (aminiAc.checked) {
+      totalAmount += Number(aminiAc.value);
+      aminities += "AC[500/Day]";
+    }
+    totalAmount *= noOfDays;
+    if (noOfPerson > 2) {
+      totalAmount += (noOfPerson - 2) * 500 * noOfDays;
+    }
+    balAmount = totalAmount - advance;
+    document.getElementById("reg").style.display = "none";
+    document.getElementById("bookSum").style.display = "block";
+    document.getElementById("customerName").innerHTML = cName;
+    document.getElementById("chInDate").innerHTML = date;
+    document.getElementById("totalDays").innerHTML = noOfDays;
+    document.getElementById("totalPerson").innerHTML = noOfPerson;
+    document.getElementById("selectedRoom").innerHTML = selRoomType;
+    document.getElementById("amini").innerHTML =
+    aminities != undefined ? aminities : "No Aminities";
+    document.getElementById("roomAmount").innerHTML = "₹ " + totalAmount;
+    document.getElementById("adPaid").innerHTML = "₹ " + advance;
+    document.getElementById("balAmount").innerHTML = "₹ " + balAmount;
+  }
+  
+  // Active Registration Button
+  
+  function activeReg() {
+    var btn = document.getElementById("btnReg");
+    btn.removeAttribute("disabled");
+    btn.style.cursor = "pointer";
+  }
+  
+  // Close Button Coding
+  
+  function closeClick() {
+    document.getElementById("reg").style.display = "block";
+    document.getElementById("bookSum").style.display = "none";
+    location = location.href;
+  }
+</script>
+  <div id="reg" class="container bg-success" style="height: auto;">
+    <div class="row">
+      <div class="col-lg-12 col-sm-12 col-md-12">
+        <h1 class="text-center text-white">Hotel Registration</h1>
+      </div>
+    </div>
+    <div class="container-fluid ">
+      <form action="" class="container">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-12">
+              <h3 class=" text-center">Customer Details</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class=" col-lg-6 text-center"> <label for="">Customer Name</label></div>
+            <div class=" col-lg-6"> <input type="text" name="" id="cName" class="form form-control" /></div>
+          </div>
+          <div class="row">
+            <div class=" col-lg-6 text-center"> <label for="">Check In Date</label></div>
+            <div class=" col-lg-6"><input type="date" name="" id="date" class="form form-control" /></div>
+          </div>
+          <div class="row">
+            <div class=" col-lg-6 text-center"> <label for="">Total No Of Days</label></div>
+            <div class=" col-lg-6"> <input type="number" name="" id="noOfdays" class="form form-control" /></div>
+          </div>
+          <div class="row">
+            <div class=" col-lg-6 text-center"> <label for="">Total No Of Person</label></div>
+            <div class=" col-lg-6"> <input type="number" name="" id="noOfperson" class="form form-control" /></div>
+          </div>
+        </div>
+        <div class=" container-fluid">
+          <div class="row">
+            <div class="col-lg-12">
+              <h3 class=" text-center">Select Room</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <figure>
+                <img src="file:///C:/Users/win10/Desktop/h/r.jpg" alt="delux" width="100%" height="300" />
+                <caption>
+                  <div class=" container">
+                    <div class="row"><input class="custom-radio" type="radio" name="roomPrice" id="delux"
+                        value="1,50,000" />
+                      <label>Deluxe Room [1,50,000/Day]</label></div>
+                  </div>
+                </caption>
+              </figure>
+            </div>
+            <div class="col-lg-6">
+              <figure>
+                <img src="file:///C:/Users/win10/Desktop/h/r1.jpg" alt="deluxe" width="100%" height="300" />
+                <caption>
+                  <div class=" container">
+                    <div class="row">
+                      <input class="custom-radio" type="radio" name="roomPrice" id="suite" value="1,00,000" />
+                      <label>Suite Room [1,00,000/Day]</label>
+                    </div>
+                  </div>
+                </caption>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-12">
+              <h3 class=" text-center">Amenities</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <figure>
+                <img src="file:///C:/Users/win10/Desktop/h/r2.jpg" alt="locker" width="100%" height="300" />
+                <caption>
+                  <div class=" container">
+                    <div class="row"><input class="checkbox" type="checkbox" name="" id="locker" value="500" />
+                      <label>Room Kit [500/Day]</label></div>
+                  </div>
+                </caption>
+              </figure>
+            </div>
+            <div class="col-lg-6">
+              <figure>
+                <img src="file:///C:/Users/win10/Desktop/h/r3.jpg" alt="ac" width="100%" height="300" />
+                <caption>
+                  <div class=" container">
+                    <div class="row">
+                      <input class="checkbox" type="checkbox" name="" id="ac" value="500" />
+                      <label>AC [500/Day]</label>
+                    </div>
+                  </div>
+                </caption>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <h3 class=" text-center">Advance</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class=" col-lg-6 text-center"> <label for="">Pay</label></div>
+            <div class=" col-lg-6"> <input type="number" name="" id="advancePaid" class="form form-control"
+                oninput="activeReg()" /></div>
+          </div>
+        </div>
+        <div class=" container">
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              <input id="btnReg" type="button" value="Register" class="btn btn-danger " onclick="regClick()"
+                disabled="disabled" style="cursor: not-allowed;" />
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!--Summary Coding Start-->
+  <div id="bookSum" class="container" style="display: none;">
+    <div class="frm">
+      <h1 class="text text-info text-center">Booking Summary</h1>
+      <table class="table table-info summaryTbl table-bordered">
+        <tr>
+          <td>Customer Name</td>
+          <td id="customerName"></td>
+        </tr>
+        <tr>
+          <td>Check in Date</td>
+          <td id="chInDate"></td>
+        </tr>
+        <tr>
+          <td>Total No of Days</td>
+          <td id="totalDays"></td>
+        </tr>
+        <tr>
+          <td>Total No of Person</td>
+          <td id="totalPerson"></td>
+        </tr>
+        <tr>
+          <td>Selected Room</td>
+          <td id="selectedRoom"></td>
+        </tr>
+        <tr>
+          <td>Selected Aminities</td>
+          <td id="amini"></td>
+        </tr>
+        <tr>
+          <td>Room Amount</td>
+          <td id="roomAmount"></td>
+        </tr>
+        <tr>
+          <td>Advance Paid</td>
+          <td id="adPaid"></td>
+        </tr>
+        <tr>
+          <td>Balance Amount</td>
+          <td id="balAmount"></td>
+        </tr>
+      </table>
+      <div class=" container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <button class="btn btn-danger" onclick="closeClick()">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src=" script1.js"></script>
+</body>
+</html>
